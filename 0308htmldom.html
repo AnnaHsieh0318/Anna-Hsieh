@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+</head>
+<body>
+    <h3>這是HTML DOM的介紹</h3>
+    <div id="content">HTML DOM就是window物件</div>
+    <div>
+        <input id="type1" type="text" value="Hello"/>
+        <button onclick="check();">Check</button>
+    </div>
+    <div id="type2"></div>
+    <button onclick="change();">Change</button>
+    <div>
+        <img id="picture" onclick="picture();" src="謝欣妤-2.jpg" 
+        style="transition:width 0.5s, height 0.5s, opacity 0.5s, opacity:0.5;width:100px;height:100px;opacity:1"/>
+    </div>
+    <script>
+        function check(){
+            //取得想要操作的標籤
+            let element=document.querySelector("#type1");
+            console.dir(element);
+            //把使用者打的字後面加上World顯示在網頁的另一個標籤裡
+            console.log(element.value);
+            let words=element.value+"World";
+            let type2=document.querySelector("#type2");
+            type2.innerHTML=words;
+        }
+
+        function change(){
+            let element=document.querySelector("#content");
+            element.innerHTML="改變過的內容"
+        }
+
+        function picture(){
+            let picture=document.querySelector("#picture");
+            picture.src="謝欣妤-1_Original.jpg";
+            picture.style.width="300px";
+            picture.style.height="300px";
+            picture.style.opacity="1";
+        }
+
+    </script>
+    
+</body>
+</html>
